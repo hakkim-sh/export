@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --ink: #172b3b;
+  --green: #176b55;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  color: white;
+  background: #176b55;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.section-pad {
+  padding: 92px max(24px, calc((100vw - 1200px) / 2));
+}
+
+.eyebrow {
+  color: #176b55;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.serif {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -.045em;
+}
+
+.product-image {
+  background-size: cover;
+  background-position: center;
+}
+
+dialog::backdrop {
+  background: rgb(15 29 37 / 56%);
+  backdrop-filter: blur(3px);
+}
+
+dialog[open] {
+  animation: dialog-in .18s ease-out;
+}
+
+@keyframes dialog-in {
+  from { opacity: 0; transform: translateY(8px) scale(.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 640px) {
+  .section-pad {
+    padding: 68px 22px;
+  }
+}
